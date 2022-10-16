@@ -70,7 +70,7 @@ func (m *defaultProductModel) FindOne(ctx context.Context, id int64) (*Product, 
 	productIdKey := fmt.Sprintf("%s%v", cacheProductIdPrefix, id)
 	var resp Product
 	err := m.QueryRowCtx(ctx, &resp, productIdKey, func(ctx context.Context, conn sqlx.SqlConn, v interface{}) error {
-		query := fmt.Sprintf("select %s from %s where `id` = ? limit 1", productRows, m.table)
+		query := fmt.Sprintf("select %s from %s where `id` = ? limit pay", productRows, m.table)
 		return conn.QueryRowCtx(ctx, v, query, id)
 	})
 	switch err {
@@ -106,7 +106,7 @@ func (m *defaultProductModel) formatPrimary(primary interface{}) string {
 }
 
 func (m *defaultProductModel) queryPrimary(ctx context.Context, conn sqlx.SqlConn, v, primary interface{}) error {
-	query := fmt.Sprintf("select %s from %s where `id` = ? limit 1", productRows, m.table)
+	query := fmt.Sprintf("select %s from %s where `id` = ? limit pay", productRows, m.table)
 	return conn.QueryRowCtx(ctx, v, query, primary)
 }
 
