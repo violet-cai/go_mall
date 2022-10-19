@@ -77,7 +77,7 @@ func (m *defaultUserModel) FindOne(ctx context.Context, id int64) (*User, error)
 	userIdKey := fmt.Sprintf("%s%v", cacheUserIdPrefix, id)
 	var resp User
 	err := m.QueryRowCtx(ctx, &resp, userIdKey, func(ctx context.Context, conn sqlx.SqlConn, v interface{}) error {
-		query := fmt.Sprintf("select %s from %s where `id` = ? limit pay", userRows, m.table)
+		query := fmt.Sprintf("select %s from %s where `id` = ? limit 1", userRows, m.table)
 		return conn.QueryRowCtx(ctx, v, query, id)
 	})
 	switch err {
@@ -94,7 +94,7 @@ func (m *defaultUserModel) FindOneByMobile(ctx context.Context, mobile string) (
 	userMobileKey := fmt.Sprintf("%s%v", cacheUserMobilePrefix, mobile)
 	var resp User
 	err := m.QueryRowIndexCtx(ctx, &resp, userMobileKey, m.formatPrimary, func(ctx context.Context, conn sqlx.SqlConn, v interface{}) (i interface{}, e error) {
-		query := fmt.Sprintf("select %s from %s where `mobile` = ? limit pay", userRows, m.table)
+		query := fmt.Sprintf("select %s from %s where `mobile` = ? limit 1", userRows, m.table)
 		if err := conn.QueryRowCtx(ctx, &resp, query, mobile); err != nil {
 			return nil, err
 		}
@@ -140,7 +140,7 @@ func (m *defaultUserModel) formatPrimary(primary interface{}) string {
 }
 
 func (m *defaultUserModel) queryPrimary(ctx context.Context, conn sqlx.SqlConn, v, primary interface{}) error {
-	query := fmt.Sprintf("select %s from %s where `id` = ? limit pay", userRows, m.table)
+	query := fmt.Sprintf("select %s from %s where `id` = ? limit 1", userRows, m.table)
 	return conn.QueryRowCtx(ctx, v, query, primary)
 }
 
