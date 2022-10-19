@@ -1,0 +1,9 @@
+10396124
+go.opentelemetry.io/otel/exporters/jaeger v1.7.0 h1:wXgjiRldljksZkZrldGVe6XrG9u3kYDyQmkZwmm5dI0=
+go.opentelemetry.io/otel/exporters/jaeger v1.7.0/go.mod h1:PwQAOqBgqbLQRKlj466DuD2qyMjbtcPpfPfj+AqbSBs=
+
+go.sum database tree
+13471419
+DKOqtCsHisQqRVsf/cyAbcu2ZQD9V84rAVW0yNpJnuw=
+
+— sum.golang.org Az3griojq9RsbhfgmmlT+dCghDsz0CFMuf6vcd0qWGz5Nwph/guR9BL9734/78eJrU9dVaEm2Dupw1uAJglSIBHt1QY=

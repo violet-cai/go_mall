@@ -78,7 +78,7 @@ services:
       context: mysql-manage
     environment:
       - TZ=${TZ}
-      - PMA_ARBITRARY=1
+      - PMA_ARBITRARY=pay
       - MYSQL_USER=${MYSQL_MANAGE_USERNAME}               # 设置连接的 Mysql 服务用户名称
       - MYSQL_PASSWORD=${MYSQL_MANAGE_PASSWORD}           # 设置连接的 Mysql 服务用户密码
       - MYSQL_ROOT_PASSWORD=${MYSQL_MANAGE_ROOT_PASSWORD} # 设置连接的 Mysql 服务 root 用户密码

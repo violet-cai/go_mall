@@ -1,0 +1,9 @@
+10396136
+go.opentelemetry.io/otel/exporters/zipkin v1.7.0 h1:X0FZj+kaIdLi29UiyrEGDhRTYsEXj9GdEW5Y39UQFEE=
+go.opentelemetry.io/otel/exporters/zipkin v1.7.0/go.mod h1:9YBXeOMFLQGwNEjsxMRiWPGoJX83usGMhbCmxUbNe5I=
+
+go.sum database tree
+13471973
+W+SdTY88wmI60eGbiagpX6IiOQ9SpGSGjKRRtRXP6ew=
+
+— sum.golang.org Az3grt5uhzuxweAGsZMv7rsG49vleuBFRO6uCQUt5t4PzU+Y7tijQe8c6sXC1FX21zjJVPhW8PO3SOo3UdA6EKAbZAY=

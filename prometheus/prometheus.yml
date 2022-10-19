@@ -1,7 +1,7 @@
 # my global config
 global:
-  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
-  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every pay minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every pay minute.
   # scrape_timeout is set to the global default (10s).
 
 # Alertmanager configuration
@@ -55,20 +55,20 @@ scrape_configs:
 
       - targets: ['golang:9082']
         labels:
-          app: 'order-api'
+          app: 'pay-api'
           env: 'test'
 
       - targets: ['golang:9092']
         labels:
-          app: 'order-rpc'
+          app: 'pay-rpc'
           env: 'test'
 
       - targets: ['golang:9083']
         labels:
-          app: 'pay-api'
+          app: 'order-api'
           env: 'test'
 
       - targets: ['golang:9093']
         labels:
-          app: 'pay-rpc'
+          app: 'order-rpc'
           env: 'test'
